@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<form class='operations' action="#" method='POST'>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="basic-addon1">Number 1</span>
+		  </div>
+		  <input type="number" name='num1' class="form-control" aria-label="Username" aria-describedby="basic-addon1">	
+		</div>		
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="basic-addon1">Number 1</span>
+		  </div>
+		  <input type="number" name='num2' class="form-control" aria-label="Username" aria-describedby="basic-addon1">	
+		</div>
+		<div class='text-center'>
+		   <button type="submit" class="btn btn-primary">Submit</button>
+		</div>	
+	</form>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p class='text-center h4'> {{ msg }}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+{% endblock %}

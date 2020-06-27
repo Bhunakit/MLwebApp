@@ -1,0 +1,19 @@
+body {
+	background-color: ghostwhite;
+}
+
+.contact{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.inform {
+	text-align: center;
+}
+
+.operations {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
