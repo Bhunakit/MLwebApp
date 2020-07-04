@@ -8,12 +8,18 @@
 		{% endif %}
 	{% endwith %}
 	{% if user %}
-	<p class='text-center display-4'> WELCOME {{ user }}</p>
+	<p class='text-center display-3'> WELCOME {{ user }}</p>
 	{% else %}
-	<p class='text-center display-4' > WELCOME </p>
+	<p class='text-center display-3' > WELCOME </p>
 	{% endif %}
 
 	<div class='text-center'>
-	   <a href="/operations" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Operation</a>
+        <div class="jumbotron jumbotron-fluid linreg">
+        <div class="container">
+            <h3 class="display-4">Linear Regression</h3>
+            <p class="lead">Try training a linear regression model!</p>
+            <a href="/linreg" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Linear Regression</a>
+        </div>
+        </div>
 	</div>
 {% endblock %}
