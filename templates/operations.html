@@ -1,21 +1,32 @@
 {% extends 'layout.html' %}
 {% block content %}
-	<form class='operations' action="#" method='POST'>
+	<h3 class='text-center'> Enter any pattern of X and Y that follows <var>y</var> = <var>m</var><var>x</var> + <var>b</var> </h3> <hr>
+
+	<div class="text-center">
+		<img src="{{ url_for('static', filename='img/linregcode.png') }}">
+	</div>
+
+	<form class='operations' action="" method='POST'>
 		<div class="input-group mb-3">
 		  <div class="input-group-prepend">
 		    <span class="input-group-text" id="basic-addon1">Number 1</span>
 		  </div>
-		  <input type="number" name='num1' class="form-control" aria-label="Username" aria-describedby="basic-addon1">	
+		  <input type="text" name='x' class="form-control" aria-label="Username" aria-describedby="basic-addon1">	
 		</div>		
 		<div class="input-group mb-3">
 		  <div class="input-group-prepend">
 		    <span class="input-group-text" id="basic-addon1">Number 1</span>
 		  </div>
-		  <input type="number" name='num2' class="form-control" aria-label="Username" aria-describedby="basic-addon1">	
-		</div>
+		  <input type="text" name='y' class="form-control" aria-label="Username" aria-describedby="basic-addon1">	
+		</div> 
 		<div class='text-center'>
-		   <button type="submit" class="btn btn-primary">Submit</button>
-		</div>	
+		   <button type="submit" class="btn btn-primary">Train</button>
+		</div>	<br> <br>
+		<div class="form-group text-center">
+		    <label for="exampleFormControlInput1">Enter an X and Y will be predicted by Linear Regression model</label>
+		    <input type="number" name='num' class="form-control" id="exampleFormControlInput1"> <br>
+		    <button type="submit" class="btn btn-primary">Predict</button>
+		</div>
 	</form>
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
@@ -24,4 +35,8 @@
 			{% endfor %}
 		{% endif %}
 	{% endwith %}
+	<br> 
+	<div class="text-center">
+		<a role="button" href="/linreg" type="reset" value="Reset">Reset</a>
+	</div>
 {% endblock %}
